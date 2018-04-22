@@ -1,4 +1,5 @@
 # Long Press - Vue directive
+[![Build Status](https://travis-ci.org/FeliciousX/vue-directive-long-press.svg?branch=master)](https://travis-ci.org/FeliciousX/vue-directive-long-press)
 
 expose long press event on any element or component
 
