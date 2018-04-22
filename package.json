@@ -27,7 +27,8 @@
     "vue-template-compiler": "^2.5.16"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
