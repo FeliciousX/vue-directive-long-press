@@ -26,7 +26,7 @@ export const directiveOption = {
       document.removeEventListener('mouseup', onmouseup)
     }
 
-    el.$_long_press_mousedown_handler = () => {
+    const onmousedown = () => {
       document.addEventListener('mouseup', onmouseup)
 
       const timeout = setTimeout(() => {
@@ -40,6 +40,7 @@ export const directiveOption = {
       el.dataset.longPressTimeoutId = timeout.toString()
     }
 
+    el.$_long_press_mousedown_handler = onmousedown;
     el.addEventListener('mousedown', onmousedown)
   },
   /**
