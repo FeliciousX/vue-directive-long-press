@@ -23,7 +23,8 @@
     "typescript": "^2.8.3",
     "typescript-eslint-parser": "^15.0.0",
     "vue": "^2.5.16",
-    "vue-jest": "^2.5.0"
+    "vue-jest": "^2.5.0",
+    "vue-template-compiler": "^2.5.16"
   },
   "scripts": {
     "test": "jest"
@@ -50,7 +51,7 @@
       "^.+\\.vue$": "<rootDir>/node_modules/vue-jest"
     },
     "testMatch": [
-      "<rootDir>/test/**.js"
+      "<rootDir>/test/**.ts"
     ],
     "moduleFileExtensions": [
       "json",
