@@ -6,8 +6,13 @@ import CustomApp from './components/TheCustomApp.vue'
 import BaseButton from './components/BaseButton.vue'
 
 describe('Using Long Press Directive', () => {
+  jest.useFakeTimers()
+
+  afterEach(() => {
+    jest.clearAllTimers()
+  })
   describe('native', () => {
-    test('success', done => {
+    test('success', () => {
       const wrapper = mount(App)
 
       expect(wrapper.emitted('long-press-start')).toBeUndefined()
@@ -15,19 +20,18 @@ describe('Using Long Press Directive', () => {
 
       wrapper.find('button').trigger('mousedown')
 
-      setTimeout(() => {
-        expect(wrapper.emitted('long-press-start')).toHaveLength(1)
-        expect(wrapper.emitted('long-press-stop')).toBeUndefined()
+      jest.advanceTimersByTime(150)
 
-        document.dispatchEvent( new Event('mouseup'))
+      expect(wrapper.emitted('long-press-start')).toHaveLength(1)
+      expect(wrapper.emitted('long-press-stop')).toBeUndefined()
 
-        expect(wrapper.emitted('long-press-stop')).toHaveLength(1)
-        expect(wrapper.emitted('long-press-start')).toHaveLength(1)
-        done()
-      }, 50)
+      document.dispatchEvent( new Event('mouseup'))
+
+      expect(wrapper.emitted('long-press-stop')).toHaveLength(1)
+      expect(wrapper.emitted('long-press-start')).toHaveLength(1)
     })
 
-    test('cancel', done => {
+    test('cancel', () => {
       const wrapper = mount(App)
 
       expect(wrapper.emitted('long-press-start')).toBeUndefined()
@@ -35,21 +39,20 @@ describe('Using Long Press Directive', () => {
 
       wrapper.find('button').trigger('mousedown')
 
-      setTimeout(() => {
-        expect(wrapper.emitted('long-press-start')).toBeUndefined()
-        expect(wrapper.emitted('long-press-stop')).toBeUndefined()
+      jest.advanceTimersByTime(149)
 
-        document.dispatchEvent( new Event('mouseup'))
+      expect(wrapper.emitted('long-press-start')).toBeUndefined()
+      expect(wrapper.emitted('long-press-stop')).toBeUndefined()
 
-        expect(wrapper.emitted('long-press-start')).toBeUndefined()
-        expect(wrapper.emitted('long-press-stop')).toHaveLength(1)
-        done()
-      }, 49)
+      document.dispatchEvent( new Event('mouseup'))
+
+      expect(wrapper.emitted('long-press-start')).toBeUndefined()
+      expect(wrapper.emitted('long-press-stop')).toHaveLength(1)
     })
   })
 
   describe('custom', () => {
-    test('success', done => {
+    test('success', () => {
       const wrapper = mount(CustomApp)
 
       expect(wrapper.emitted('long-press-start')).toBeUndefined()
@@ -57,19 +60,18 @@ describe('Using Long Press Directive', () => {
 
       wrapper.find(BaseButton).trigger('mousedown')
 
-      setTimeout(() => {
-        expect(wrapper.emitted('long-press-start')).toHaveLength(1)
-        expect(wrapper.emitted('long-press-stop')).toBeUndefined()
+      jest.advanceTimersByTime(150)
 
-        document.dispatchEvent( new Event('mouseup'))
+      expect(wrapper.emitted('long-press-start')).toHaveLength(1)
+      expect(wrapper.emitted('long-press-stop')).toBeUndefined()
 
-        expect(wrapper.emitted('long-press-stop')).toHaveLength(1)
-        expect(wrapper.emitted('long-press-start')).toHaveLength(1)
-        done()
-      }, 50)
+      document.dispatchEvent( new Event('mouseup'))
+
+      expect(wrapper.emitted('long-press-stop')).toHaveLength(1)
+      expect(wrapper.emitted('long-press-start')).toHaveLength(1)
     })
 
-    test('cancel', done => {
+    test('cancel', () => {
       const wrapper = mount(CustomApp)
 
       expect(wrapper.emitted('long-press-start')).toBeUndefined()
@@ -77,16 +79,15 @@ describe('Using Long Press Directive', () => {
 
       wrapper.find(BaseButton).trigger('mousedown')
 
-      setTimeout(() => {
-        expect(wrapper.emitted('long-press-start')).toBeUndefined()
-        expect(wrapper.emitted('long-press-stop')).toBeUndefined()
+      jest.advanceTimersByTime(149)
 
-        document.dispatchEvent( new Event('mouseup'))
+      expect(wrapper.emitted('long-press-start')).toBeUndefined()
+      expect(wrapper.emitted('long-press-stop')).toBeUndefined()
 
-        expect(wrapper.emitted('long-press-start')).toBeUndefined()
-        expect(wrapper.emitted('long-press-stop')).toHaveLength(1)
-        done()
-      }, 49)
+      document.dispatchEvent( new Event('mouseup'))
+
+      expect(wrapper.emitted('long-press-start')).toBeUndefined()
+      expect(wrapper.emitted('long-press-stop')).toHaveLength(1)
     })
   })
 })

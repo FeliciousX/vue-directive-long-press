@@ -2,7 +2,7 @@
   <div>
     <h1>The page</h1>
     <button
-      v-long-press="50"
+      v-long-press="150"
       @long-press-start="onLongPressStart"
       @long-press-stop="onLongPressStop">The button</button>
   </div>
