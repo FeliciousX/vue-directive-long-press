@@ -1,17 +1,20 @@
 <template>
   <div>
-    <h1>The page</h1>
-    <button
+    <base-button
       v-long-press="50"
       @long-press-start="onLongPressStart"
-      @long-press-stop="onLongPressStop">The button</button>
+      @long-press-stop="onLongPressStop"/>
   </div>
 </template>
 <script lang="ts">
 import LongPress from '../../src'
+import BaseButton from './BaseButton.vue'
 
 export default {
-  name: 'TheApp',
+  name: 'TheCustomApp',
+  components: {
+    BaseButton
+  },
   directives: {
     LongPress
   },
