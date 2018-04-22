@@ -5,9 +5,19 @@
   "main": "dist/index.js",
   "dependencies": {},
   "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.14",
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.4.3",
+    "babel-preset-env": "^1.6.1",
+    "eslint-plugin-typescript": "^0.11.0",
     "jest": "^22.4.3",
+    "markdox": "^0.1.10",
+    "standard": "^11.0.1",
+    "ts-jest": "^22.4.4",
     "typescript": "^2.8.3",
-    "vue": "^2.5.16"
+    "typescript-eslint-parser": "^15.0.0",
+    "vue": "^2.5.16",
+    "vue-jest": "^2.5.0"
   },
   "scripts": {
     "test": "jest"
