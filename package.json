@@ -9,7 +9,13 @@
     "babel-core": "^6.26.0",
     "babel-jest": "^22.4.3",
     "babel-preset-env": "^1.6.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1",
     "eslint-plugin-typescript": "^0.11.0",
+    "eslint-plugin-vue": "^4.5.0",
     "jest": "^22.4.3",
     "markdox": "^0.1.10",
     "standard": "^11.0.1",
@@ -36,5 +42,30 @@
   "bugs": {
     "url": "https://github.com/FeliciousX/vue-directive-long-press/issues"
   },
-  "homepage": "https://github.com/FeliciousX/vue-directive-long-press#readme"
+  "homepage": "https://github.com/FeliciousX/vue-directive-long-press#readme",
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.ts$": "<rootDir>/node_modules/ts-jest",
+      "^.+\\.vue$": "<rootDir>/node_modules/vue-jest"
+    },
+    "testMatch": [
+      "<rootDir>/test/**.js"
+    ],
+    "moduleFileExtensions": [
+      "json",
+      "js",
+      "ts",
+      "vue"
+    ]
+  },
+  "standard": {
+    "parser": "typescript-eslint-parser",
+    "plugins": [
+      "typescript"
+    ],
+    "envs": [
+      "jest"
+    ]
+  }
 }
