@@ -36,7 +36,7 @@ export default {
 </script>
 ```
 
-To use directive globally...
+To use directive globally
 
 ```typescript
 import Vue from 'vue'
