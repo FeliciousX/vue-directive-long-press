@@ -48,7 +48,7 @@ Vue.directive( 'long-press': LongPress )
 ## Demo [WIP]
 
 
-## Running the tests [WIP]
+## Running the tests
 
 ```
 npm run test
