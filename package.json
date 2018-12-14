@@ -5,26 +5,26 @@
   "main": "dist/index.js",
   "dependencies": {},
   "devDependencies": {
-    "@vue/test-utils": "^1.0.0-beta.14",
-    "babel-core": "^6.26.0",
-    "babel-jest": "^22.4.3",
-    "babel-preset-env": "^1.6.1",
+    "@vue/test-utils": "^1.0.0-beta.27",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^22.4.4",
+    "babel-preset-env": "^1.7.0",
     "eslint-config-standard": "^11.0.0",
-    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-node": "^6.0.1",
-    "eslint-plugin-promise": "^3.7.0",
-    "eslint-plugin-standard": "^3.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
     "eslint-plugin-typescript": "^0.11.0",
-    "eslint-plugin-vue": "^4.5.0",
-    "jest": "^22.4.3",
+    "eslint-plugin-vue": "^4.7.1",
+    "jest": "^22.4.4",
     "markdox": "^0.1.10",
     "standard": "^11.0.1",
-    "ts-jest": "^22.4.4",
-    "typescript": "^2.8.3",
-    "typescript-eslint-parser": "^15.0.0",
-    "vue": "^2.5.16",
-    "vue-jest": "^2.5.0",
-    "vue-template-compiler": "^2.5.16"
+    "ts-jest": "^22.4.6",
+    "typescript": "^2.9.2",
+    "typescript-eslint-parser": "^15.0.1",
+    "vue": "^2.5.21",
+    "vue-jest": "^2.6.0",
+    "vue-template-compiler": "^2.5.21"
   },
   "scripts": {
     "test": "jest",
@@ -60,7 +60,8 @@
       "js",
       "ts",
       "vue"
-    ]
+    ],
+    "testURL": "http://localhost"
   },
   "standard": {
     "parser": "typescript-eslint-parser",
