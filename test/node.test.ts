@@ -18,14 +18,14 @@ describe('Using Long Press Directive', () => {
       expect(wrapper.emitted('long-press-start')).toBeUndefined()
       expect(wrapper.emitted('long-press-stop')).toBeUndefined()
 
-      wrapper.find('button').trigger('mousedown')
+      wrapper.find('button').trigger('pointerdown')
 
       jest.advanceTimersByTime(150)
 
       expect(wrapper.emitted('long-press-start')).toHaveLength(1)
       expect(wrapper.emitted('long-press-stop')).toBeUndefined()
 
-      document.dispatchEvent( new Event('mouseup'))
+      document.dispatchEvent(new Event('pointerup'))
 
       expect(wrapper.emitted('long-press-stop')).toHaveLength(1)
       expect(wrapper.emitted('long-press-start')).toHaveLength(1)
@@ -37,14 +37,14 @@ describe('Using Long Press Directive', () => {
       expect(wrapper.emitted('long-press-start')).toBeUndefined()
       expect(wrapper.emitted('long-press-stop')).toBeUndefined()
 
-      wrapper.find('button').trigger('mousedown')
+      wrapper.find('button').trigger('pointerdown')
 
       jest.advanceTimersByTime(149)
 
       expect(wrapper.emitted('long-press-start')).toBeUndefined()
       expect(wrapper.emitted('long-press-stop')).toBeUndefined()
 
-      document.dispatchEvent( new Event('mouseup'))
+      document.dispatchEvent(new Event('pointerup'))
 
       expect(wrapper.emitted('long-press-start')).toBeUndefined()
       expect(wrapper.emitted('long-press-stop')).toHaveLength(1)
@@ -58,14 +58,14 @@ describe('Using Long Press Directive', () => {
       expect(wrapper.emitted('long-press-start')).toBeUndefined()
       expect(wrapper.emitted('long-press-stop')).toBeUndefined()
 
-      wrapper.find(BaseButton).trigger('mousedown')
+      wrapper.find(BaseButton).trigger('pointerdown')
 
       jest.advanceTimersByTime(150)
 
       expect(wrapper.emitted('long-press-start')).toHaveLength(1)
       expect(wrapper.emitted('long-press-stop')).toBeUndefined()
 
-      document.dispatchEvent( new Event('mouseup'))
+      document.dispatchEvent(new Event('pointerup'))
 
       expect(wrapper.emitted('long-press-stop')).toHaveLength(1)
       expect(wrapper.emitted('long-press-start')).toHaveLength(1)
@@ -77,14 +77,14 @@ describe('Using Long Press Directive', () => {
       expect(wrapper.emitted('long-press-start')).toBeUndefined()
       expect(wrapper.emitted('long-press-stop')).toBeUndefined()
 
-      wrapper.find(BaseButton).trigger('mousedown')
+      wrapper.find(BaseButton).trigger('pointerdown')
 
       jest.advanceTimersByTime(149)
 
       expect(wrapper.emitted('long-press-start')).toBeUndefined()
       expect(wrapper.emitted('long-press-stop')).toBeUndefined()
 
-      document.dispatchEvent( new Event('mouseup'))
+      document.dispatchEvent(new Event('pointerup'))
 
       expect(wrapper.emitted('long-press-start')).toBeUndefined()
       expect(wrapper.emitted('long-press-stop')).toHaveLength(1)
