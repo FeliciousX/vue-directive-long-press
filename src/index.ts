@@ -1,7 +1,7 @@
 import { VNode, VNodeDirective } from 'vue/types/vnode'
 
 interface LongPressHTMLElement extends HTMLElement {
-  $_long_press_mousedown_handler : () => void;
+  $_long_press_pointerdown_handler : () => void;
   dataset : {
     longPressTimeoutId : string;
   };
@@ -14,7 +14,7 @@ export const directiveOption = {
   bind (el: LongPressHTMLElement, binding: VNodeDirective, vnode: VNode) {
     el.dataset.longPressTimeoutId = null
 
-    const onmouseup = () => {
+    const onpointerup = () => {
       clearTimeout(parseInt(el.dataset.longPressTimeoutId))
 
       if (vnode.componentInstance) {
@@ -23,11 +23,11 @@ export const directiveOption = {
         el.dispatchEvent(longPressStop)
       }
 
-      document.removeEventListener('mouseup', onmouseup)
+      document.removeEventListener('pointerup', onpointerup)
     }
 
-    const onmousedown = () => {
-      document.addEventListener('mouseup', onmouseup)
+    const onpointerdown = () => {
+      document.addEventListener('pointerup', onpointerup)
 
       const timeout = setTimeout(() => {
         if (vnode.componentInstance) {
@@ -40,19 +40,19 @@ export const directiveOption = {
       el.dataset.longPressTimeoutId = timeout.toString()
     }
 
-    el.$_long_press_mousedown_handler = onmousedown;
-    el.addEventListener('mousedown', onmousedown)
+    el.$_long_press_pointerdown_handler = onpointerdown;
+    el.addEventListener('pointerdown', onpointerdown)
   },
   /**
    * NOTE: since unbind usually involes removing the element
-   * just remove all mousedown listener on the element
+   * just remove all pointerdown listener on the element
    *
-   * If you are using the mousedown event and unbinding this directive,
-   * your mousedown event may be removed
+   * If you are using the pointerdown event and unbinding this directive,
+   * your pointerdown event may be removed
    */
   unbind (el : LongPressHTMLElement) {
     clearTimeout(parseInt(el.dataset.longPressTimeoutId))
-    el.removeEventListener('mousedown', el.$_long_press_mousedown_handler)
+    el.removeEventListener('pointerdown', el.$_long_press_pointerdown_handler)
   }
 }
 
