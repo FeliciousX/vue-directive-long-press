@@ -43,13 +43,6 @@ export const directiveOption = {
     el.$_long_press_pointerdown_handler = onpointerdown;
     el.addEventListener('pointerdown', onpointerdown)
   },
-  /**
-   * NOTE: since unbind usually involes removing the element
-   * just remove all pointerdown listener on the element
-   *
-   * If you are using the pointerdown event and unbinding this directive,
-   * your pointerdown event may be removed
-   */
   unbind (el : LongPressHTMLElement) {
     clearTimeout(parseInt(el.dataset.longPressTimeoutId))
     el.removeEventListener('pointerdown', el.$_long_press_pointerdown_handler)
