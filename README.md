@@ -42,11 +42,11 @@ To use directive globally
 import Vue from 'vue'
 import LongPress from 'vue-directive-long-press'
 
-Vue.directive( 'long-press': LongPress )
+Vue.directive('long-press', LongPress)
 ```
 
-## Demo [WIP]
-
+## Demo
+View and edit the demo at StackBlitz [here](https://stackblitz.com/edit/vue-directive-long-press-demo)!
 
 ## Running the tests
 
