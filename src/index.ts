@@ -12,7 +12,7 @@ const longPressStart = new CustomEvent('long-press-start')
 
 export const directiveOption = {
   bind (el: LongPressHTMLElement, binding: VNodeDirective, vnode: VNode) {
-    el.dataset.longPressTimeoutId = null
+    el.dataset.longPressTimeoutId = '0'
 
     const onpointerup = () => {
       clearTimeout(parseInt(el.dataset.longPressTimeoutId))
