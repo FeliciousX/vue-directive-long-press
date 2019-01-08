@@ -1,6 +1,6 @@
 {
   "name": "vue-directive-long-press",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Vue directive for Long Press",
   "main": "dist/index.js",
   "dependencies": {},
